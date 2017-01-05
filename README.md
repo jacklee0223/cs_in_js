@@ -1,2 +1,1 @@
-# comp_sci_js
-Computer Science in Javascript!
+# Computer Science in Javascript!
