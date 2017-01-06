@@ -9,18 +9,18 @@ let matrix = [
 function spin ( matrix ) {
   let temp_index = matrix[0].length - 1;
   let matrix_index = 0;
+  let new_matrix = [];
   
   while ( temp_index >= 0 ) {
     let temp = [];
     for ( let i=0; i<matrix.length; i++) {
       temp.push( matrix[i][temp_index] );
     }
-    matrix[matrix_index] = temp;
+    new_matrix[matrix_index] = temp;
     temp_index--;
     matrix_index++;
   }
-  return matrix;
+  return new_matrix;
 }
 
-spin(matrix);
 spin(matrix);
