@@ -1,9 +1,10 @@
 'use strict';
 let matrix = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9, 10, 11, 12]
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
 ];
+
 
 function spin ( matrix ) {
   let temp_index = matrix[0].length - 1;
