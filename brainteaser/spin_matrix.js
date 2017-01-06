@@ -20,7 +20,13 @@ function spin ( matrix ) {
     temp_index--;
     matrix_index++;
   }
-  return new_matrix;
+  
+  for ( let j=0; j<new_matrix.length; j++) {
+    matrix[j] = new_matrix[j];
+  }
+  return matrix;
 }
 
-spin(matrix);
+spin( matrix );
+spin( matrix );
+
