@@ -9,24 +9,24 @@ let matrix = [
 function spin ( matrix ) {
   let temp_index = matrix[0].length - 1;
   let matrix_index = 0;
-  let new_matrix = [];
+  let matrix_clone = matrix.slice();
   
   while ( temp_index >= 0 ) {
     let temp = [];
-    for ( let i=0; i<matrix.length; i++) {
-      temp.push( matrix[i][temp_index] );
+    for ( let i=0; i<matrix_clone.length; i++) {
+      temp.push( matrix_clone[i][temp_index] );
     }
-    new_matrix[matrix_index] = temp;
+    matrix[matrix_index] = temp;
     temp_index--;
     matrix_index++;
   }
   
-  for ( let j=0; j<new_matrix.length; j++) {
-    matrix[j] = new_matrix[j];
-  }
   return matrix;
 }
 
-spin( matrix );
-spin( matrix );
+console.log( matrix );
+console.log(spin( matrix ) );
+console.log(spin( matrix ) );
+console.log(spin( matrix ) );
+console.log(spin( matrix ) );
 
