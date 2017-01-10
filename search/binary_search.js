@@ -25,4 +25,4 @@ function binary_search (array, target) {
   return result;
 }
 
-binary_search(array, 2);
+binary_search(array, 15);
