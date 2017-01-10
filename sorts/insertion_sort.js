@@ -1,12 +1,14 @@
 'use strict';
 
 const array = [ 1, 4, 1, 3, 5, 6, 4, 8 ];
-// 1, 1, 3, 4, 4, 5, 8
 const obj = { foo: 'bar', fooz: 'baz' };
 const nothing = null;
 const empty_array = [];
 
-// Function insertion_sort: Loop through array, store the current value, and loop through all values before it in descending order. Shift stored value left if we still have elements left, and also the current value is bigger than stored value. Return fully sorted array
+/* Function insertion_sort: Loop through array, store the current value, 
+and loop through all values before it in descending order. 
+Shift stored value left if we still have elements left, and also the current value is 
+bigger than stored value. Return fully sorted array */
 function insertion_sort(input_array) {
     if ( !Array.isArray( input_array ) ) {
         return "Not an array";

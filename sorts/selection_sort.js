@@ -1,12 +1,14 @@
 'use strict';
 
 const array = [ 1, 4, 1, 3, 5, 6, 4, 8 ];
-// 1, 1, 3, 4, 4, 5, 8
 const obj = { foo: 'bar', fooz: 'baz' };
 const nothing = null;
 const empty_array = [];
 
-// Function selection_sort: Create an sorted and unsorted submists, Find the smallest (or can be largest) element in the unsorted sublist, swapping it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.
+/* Function selection_sort: Create an sorted and unsorted submists, 
+Find the smallest (or can be largest) element in the unsorted sublist, 
+swapping it with the leftmost unsorted element (putting it in sorted order), 
+and moving the sublist boundaries one element to the right. */
 function selection_sort( input_array ) {
     // return if input_array is not an array
     if ( !Array.isArray(input_array) ) {

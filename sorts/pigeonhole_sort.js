@@ -1,12 +1,14 @@
 'use strict';
 
 const array = [ 1, 4, 1, 3, 5, 6, 4, 8 ];
-// 1, 1, 3, 4, 4, 5, 8
 const obj = { foo: 'bar', fooz: 'baz' };
 const nothing = null;
 const empty_array = [];
 
-// Function pigeonhole_sort: create a new pigeonhole array, fill it with 0's for the number of input array+1, iterate through input array and increment matching index at pigeonhole, iterate through pigeonhole, replacing the value with 1 and incrementing based on the value at pigeonhole index
+/* Function pigeonhole_sort: create a new pigeonhole array, fill it with 0's 
+for the number of input array+1, iterate through input array and increment 
+matching index at pigeonhole, iterate through pigeonhole, replacing 
+the value with 1 and incrementing based on the value at pigeonhole index */
 function pigeonhole_sort( input_array ) {
     // return if input_array is not an array
     if ( !Array.isArray(input_array) ) {

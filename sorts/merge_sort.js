@@ -1,12 +1,12 @@
 'use strict';
 
 const array = [ 1, 4, 1, 3, 5, 6, 4, 8 ];
-// 1, 1, 3, 4, 4, 5, 8
 const obj = { foo: 'bar', fooz: 'baz' };
 const nothing = null;
 const empty_array = [];
 
-// Function merge_sort: divide input array into left and right, call merge function that sorts and merges input array after calling merge_sort itself on left and right
+/* Function merge_sort: divide input array into left and right, call merge function 
+that sorts and merges input array after calling merge_sort itself on left and right */
 function merge_sort( input_array ) {
 	// Return if input_array is not an array
 	if ( !Array.isArray( input_array ) ) {
@@ -27,12 +27,16 @@ function merge_sort( input_array ) {
 }
 
 
-// Function merge: takes two inputs, left and right array, compare the first element in each array to push the smaller one into result array and popping it from the array until both left and right are empty
+/* Function merge: takes two inputs, left and right array, compare the first element 
+in each array to push the smaller one into result array and popping it from the array 
+until both left and right are empty */
 function merge( left_array, right_array ) {
 	// Define result array
 	const result_array = [];
 	
-	// While there are elements in both left_array and right_array, compare the first elements in left and right, put the smaller one inside result array and pop itself
+	/* While there are elements in both left_array and right_array, 
+	compare the first elements in left and right, put the smaller one 
+	inside result array and pop itself */
 	while ( left_array.length && right_array.length ) {
 		if ( left_array[0] <= right_array[0] ) {
 			result_array.push( left_array.shift() );
@@ -41,12 +45,14 @@ function merge( left_array, right_array ) {
 		}
 	}
 	
-	// If right array is empty but there are elements in left array, put the first element inside result array and pop itself until it is empty
+	/* If right array is empty but there are elements in left array, 
+	put the first element inside result array and pop itself until it is empty */
 	while ( left_array.length ) {
 		result_array.push( left_array.shift() );
 	}
 	
-	// If left array is empty but there are elements in right array, put the first element inside result array and pop itself until it is empty
+	/* If left array is empty but there are elements in right array, 
+	put the first element inside result array and pop itself until it is empty */
 	while ( right_array.length ) {
 		result_array.push( right_array.shift() );
 	}
