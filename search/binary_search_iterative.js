@@ -4,7 +4,7 @@ const array = [ 1, 3, 5, 6, 10, 15, 21, 40 ];
 
 /* Function binary_search: Takes array and target as input, return 
 at which index of the input array the target is located at.
-If target is not within array, return -1 */
+If target is not within array, return -1. Implement it iteratively */
 
 function binary_search (array, target) {
   let min = 0;
