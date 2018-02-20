@@ -9,7 +9,6 @@ const empty_array = [];
 than pivot into left_array, and elements bigger than pivot into right_array, 
 call quick_sort itself on the left_array and right_array, finally returning sorted 
 and concatenated array from left_array, pivot, and right_array */
-const array = [5, 2, 1, 3, 4, 2, 4, 8, 10];
 
 function quick_sort(arr) {
   // if not array, return
