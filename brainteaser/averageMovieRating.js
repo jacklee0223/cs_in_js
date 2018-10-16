@@ -7,7 +7,32 @@ Create a hash containing the average ratings for each movies generated from the 
 
 */
 
-var userRatings = {
+function avg_movie_ratings( ratings ) {
+  const avg_ratings = {}, count = {}, ratings_arr = Object.values(ratings), len = ratings_arr.length
+  let i = 0;
+
+  Object.values(ratings).map( indRatings => {
+    i++;
+    for ( let key in indRatings ) {
+      if ( avg_ratings[ key ] ) {
+        const subTotal = avg_ratings[ key ] + indRatings[ key ]
+        avg_ratings[ key ] = subTotal
+        count[key]++
+      } else {
+        avg_ratings[ key ] = indRatings[ key ]
+        count[key] = 1
+      }
+    }
+  } )
+
+  for ( let key in count ) {
+    avg_ratings[key] = avg_ratings[key] / count[key]
+  }
+
+  return avg_ratings
+}
+
+const user_ratings = {
    "Ryan": {"Avengers": 8, "Little Mermaid": 8, "Inception": 9},
    "Clay": {"Avengers": 9, "Inception": 10, "Independence Day": 7},
    "Christine": {"Avengers": 9, "Little Mermaid": 8, "Inception": 7},
@@ -15,34 +40,4 @@ var userRatings = {
    "David": {"Avengers": 3, "Inception": 8, "Independence Day": 6}
 }
 
-function sum(array) {
-  var total = 0;
-
-  for (var i = 0; i < array.length; i++) {
-    total += array[i];
-  }
-
-  return total;
-}
-
-function avgMovieRatings(user_ratings) {
-  var totalRatings = {};
-
-  for (var k in user_ratings) {
-    for (var l in user_ratings[k]) {
-      if (totalRatings[l] === undefined) {
-        totalRatings[l] = [userRatings[k][l]];
-      } else {
-        totalRatings[l].push(userRatings[k][l]);
-      }
-    }
-  }
-
-  for (var m in totalRatings) {
-    totalRatings[m] = (sum(totalRatings[m]) / totalRatings[m].length).toFixed(1);
-  }
-
-  return totalRatings;
-}
-
-avgMovieRatings(userRatings)
+avg_movie_ratings(user_ratings) // {"Avengers"=>6.8, "Little Mermaid"=>6.0, "Inception"=>8.4, "Independence Day"=>6.5}
