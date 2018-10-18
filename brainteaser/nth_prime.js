@@ -4,20 +4,21 @@ function isPrime (num) {
   return num !== 1 && num !== 0;
 }
 
-function nthPrime (n) {
+function nth_prime (n) {
   let result = 3;
 
-    for (var i = 1; 0 < n; i++) {
-      if(isPrime(i)) {
-        result = i; n--;
-      }
-      // we can skip the even numbers
-      if(3 <= i){
-        i++;
-      }
+  for ( let i=2; n > 0; i++ ) {
+    if ( isPrime(i) ) {
+      result = i;
+      n--;
     }
+  }
 
   return result;
 }
 
-nthPrime(10001)
+nth_prime(6) // 13
+// nth_prime(10) // 29
+// nth_prime(1000) // 7919
+
+// nth_prime(10001)
